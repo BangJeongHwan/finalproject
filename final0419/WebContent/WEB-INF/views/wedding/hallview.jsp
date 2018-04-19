@@ -8,7 +8,7 @@
 .selectTB table{
 	width: 100%;
 	border:1px solid black;
-}
+} 
 .selectTB tr{
 }
 .selectTB th{	
