@@ -171,7 +171,7 @@ align: left;
 	<div class="c_list_">
 		<div class="c_list_1">
 			<div class="c_image">
-				<a href = 'carddetail.do?pdseq=${cdlist.pdseq}'> <img src="upload/${cdlist.picture0}">
+				<a href = 'carddetail.do?cdseq=${cdlist.cdseq}'> <img src="upload/${cdlist.picture0}">
 				</a>
 			</div>
 			<h4 class="c_name">${cdlist.title}</h4>

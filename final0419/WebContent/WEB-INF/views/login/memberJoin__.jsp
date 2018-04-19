@@ -153,7 +153,7 @@ function checkSubmit() {
 	var phone1 = $("#_phone1 option:selected").val();
 	var phone2 =  $("#_phone2").val();
 	var phone3 =  $("#_phone3").val();
-	if (phone2.trim() == "" || phone2.length < 3 || phone2.length > 4 || !isNum(phone2)) {
+	if (phone2.trim() == "" || phone2.length< 3 || phone2.length > 4 || !isNum(phone2)) {
 		alert("정확한 핸드폰 번호를 입력해주세요.");
 		return false;
 	} else if (phone3.trim() == "" || phone3.length != 4 || !isNum(phone3)) {

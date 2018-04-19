@@ -106,11 +106,11 @@ public class CardController {
 	}
 	
 	@RequestMapping(value="cccdetail.do", method={RequestMethod.GET,RequestMethod.POST})
-	public String cccdetail(int pdseq,Model model) throws Exception{
+	public String cccdetail(int cdseq,Model model) throws Exception{
 		logger.info("CardController cccdetail " + new Date());
 
 		
-		CardDetailDto dto = cardService.carddetail(pdseq);
+		CardDetailDto dto = cardService.carddetail(cdseq);
 		System.out.println("carddetail = " + dto);
 		
 		model.addAttribute("dto", dto);
@@ -131,10 +131,10 @@ public class CardController {
 	}
 	
 	@RequestMapping(value="cdupdate.do", method={RequestMethod.GET,RequestMethod.POST})
-	public String cdupdate(int pdseq,Model model) throws Exception{
+	public String cdupdate(int cdseq,Model model) throws Exception{
 		logger.info("CardController ccupdate " + new Date());
 		
-		CardDetailDto cdd = cardService.carddetail(pdseq);
+		CardDetailDto cdd = cardService.carddetail(cdseq);
 		
 		model.addAttribute("cdd", cdd);
 
@@ -195,11 +195,11 @@ public class CardController {
 	}
 	
 	@RequestMapping(value="carddetail.do", method={RequestMethod.GET,RequestMethod.POST})
-	public String carddetail(int pdseq,Model model) throws Exception{
+	public String carddetail(int cdseq,Model model) throws Exception{
 		
 		logger.info("CardController carddetail " + new Date());
 		
-		CardDetailDto dto = cardService.carddetail(pdseq);
+		CardDetailDto dto = cardService.carddetail(cdseq);
 		System.out.println("carddetail = " + dto);
 		
 		model.addAttribute("dto", dto);
@@ -244,7 +244,7 @@ public class CardController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "redirect:/cardlist.do";
+		return "redirect:/cadmin.do";
 	}
 	
 	@RequestMapping(value="cdwrite.do", method={RequestMethod.GET,RequestMethod.POST})
@@ -302,10 +302,10 @@ public class CardController {
 	}
 	
 	@RequestMapping(value="ccdelete.do", method={RequestMethod.GET,RequestMethod.POST})
-	public String ccdelete(int pdseq, Model model) throws Exception{
+	public String ccdelete(int cdseq, Model model) throws Exception{
 		logger.info("CardController ccdelete " + new Date());
 		
-		boolean isS = cardService.ccdelete(pdseq);
+		boolean isS = cardService.ccdelete(cdseq);
 		
 		if(isS) {
 			return "redirect:/cadmin.do";

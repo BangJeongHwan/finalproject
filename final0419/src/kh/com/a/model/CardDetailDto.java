@@ -26,7 +26,7 @@ import java.io.Serializable;
 
 public class CardDetailDto implements Serializable {
 	
-	private int pdseq;
+	private int cdseq;
 	private int wiseq;
 	private String cid;
 	private String cname;
@@ -46,13 +46,19 @@ public class CardDetailDto implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
-	public int getPdseq() {
-		return pdseq;
+	
+
+	public int getCdseq() {
+		return cdseq;
 	}
 
-	public void setPdseq(int pdseq) {
-		this.pdseq = pdseq;
+
+
+	public void setCdseq(int cdseq) {
+		this.cdseq = cdseq;
 	}
+
+
 
 	public int getWiseq() {
 		return wiseq;
@@ -168,7 +174,7 @@ public class CardDetailDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "CardDetailDto [pdseq=" + pdseq + ", wiseq=" + wiseq + ", cid=" + cid + ", cname=" + cname + ", title="
+		return "CardDetailDto [cdseq=" + cdseq + ", wiseq=" + wiseq + ", cid=" + cid + ", cname=" + cname + ", title="
 				+ title + ", cdate=" + cdate + ", category=" + category + ", cbag=" + cbag + ", price=" + price
 				+ ", cardsize=" + cardsize + ", content=" + content + ", picture0=" + picture0 + ", picture1="
 				+ picture1 + ", picture2=" + picture2 + ", picture3=" + picture3 + "]";

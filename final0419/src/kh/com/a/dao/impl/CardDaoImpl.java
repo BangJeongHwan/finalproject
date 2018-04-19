@@ -43,8 +43,8 @@ public class CardDaoImpl implements CardDao {
 	}
 
 	@Override
-	public CardDetailDto carddetail(int pdseq) throws Exception {
-		return sqlSession.selectOne(ns + "cdetail", pdseq);
+	public CardDetailDto carddetail(int cdseq) throws Exception {
+		return sqlSession.selectOne(ns + "cdetail", cdseq);
 	}
 
 	@Override
@@ -70,8 +70,8 @@ public class CardDaoImpl implements CardDao {
 	}
 
 	@Override
-	public boolean ccdelete(int pdseq) throws Exception {
-		int n = sqlSession.delete(ns + "ccdelete", pdseq);
+	public boolean ccdelete(int cdseq) throws Exception {
+		int n = sqlSession.delete(ns + "ccdelete", cdseq);
 		return true;
 	}
 

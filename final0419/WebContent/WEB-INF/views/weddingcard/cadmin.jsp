@@ -58,8 +58,8 @@ align: center;
 
 </table>
 <br><br>
-<button onclick='location.href="cardwrite.do"'>업체올리기</button><br><br>
 </form>
+<button onclick='location.href="cardwrite.do"'>업체올리기</button><br><br>
 </div>
 
 

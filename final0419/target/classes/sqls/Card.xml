@@ -33,19 +33,19 @@ ORDER BY WISEQ DESC
 
 
 <select id="cdetail" parameterType="java.lang.Integer" resultType="kh.com.a.model.CardDetailDto">
-	SELECT PDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
+	SELECT CDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
 	FROM CARDDETAIL
-	WHERE PDSEQ=#{pdseq}
+	WHERE CDSEQ=#{cdseq}
 </select>
 
 
 <insert id="cardwrite" parameterType="kh.com.a.model.CardDto">
 	INSERT INTO CARD(WISEQ, CID, CNAME, PICTURE, CONTENT)
-	VALUES(SEQ_CARD.NEXTVAL, (select cid from WD_COMPANY where cid=#{cid}), (select cname from WD_COMPANY where cid=#{cid}), #{picture}, #{content})
+	VALUES(SEQ_WISEQ.NEXTVAL, (select cid from WD_COMPANY where cid=#{cid}), (select cname from WD_COMPANY where cid=#{cid}), #{picture}, #{content})
 </insert>
 
 <select id = "cdlist" parameterType="java.lang.Integer" resultType="kh.com.a.model.CardDetailDto">
-	SELECT PDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
+	SELECT CDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
 	FROM CARDDETAIL
 	WHERE WISEQ=#{wiseq}
 	ORDER BY WISEQ DESC
@@ -59,8 +59,8 @@ ORDER BY WISEQ DESC
 </select>
 
  <insert id="cdwrite" parameterType="kh.com.a.model.CardDetailDto"> 
-	INSERT INTO CARDDETAIL(PDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3) 
- 	VALUES(SEQ_PDSEQ.NEXTVAL,#{wiseq},#{cid},(SELECT CNAME FROM CARD WHERE WISEQ=#{wiseq}),#{title},SYSDATE,#{category},#{cbag},#{price},#{cardsize},#{content},#{picture0},#{picture1},#{picture2},#{picture3})
+	INSERT INTO CARDDETAIL(CDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3) 
+ 	VALUES(SEQ_CDSEQ.NEXTVAL,#{wiseq},#{cid},(SELECT CNAME FROM CARD WHERE WISEQ=#{wiseq}),#{title},SYSDATE,#{category},#{cbag},#{price},#{cardsize},#{content},#{picture0},#{picture1},#{picture2},#{picture3})
  </insert> 
 
 <update id="ccupdate" parameterType="kh.com.a.model.CardDto" >
@@ -71,7 +71,7 @@ ORDER BY WISEQ DESC
 
 <delete id="ccdelete" parameterType="kh.com.a.model.CardDetailDto">
 	DELETE FROM CARDDETAIL 
-	WHERE PDSEQ=#{pdseq}
+	WHERE CDSEQ=#{cdseq}
 </delete>
 
 <select id="clistcount" resultType="java.lang.Integer" parameterType="kh.com.a.model.CardDto">
@@ -100,10 +100,10 @@ ORDER BY WISEQ DESC
 </select>
 
 <select id="pagingcdlist" parameterType="kh.com.a.model.CDetailParam" resultType="kh.com.a.model.CardDetailDto">
-	SELECT PDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
+	SELECT CDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
  	 FROM (
-  		SELECT ROW_NUMBER() OVER(ORDER BY PDSEQ DESC) AS RNUM,
-  		PDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
+  		SELECT ROW_NUMBER() OVER(ORDER BY CDSEQ DESC) AS RNUM,
+  		CDSEQ,WISEQ,CID,CNAME,TITLE,CDATE,CATEGORY,CBAG,PRICE,CARDSIZE,CONTENT,PICTURE0,PICTURE1,PICTURE2,PICTURE3
   		FROM CARDDETAIL
   		WHERE WISEQ=#{wiseq} AND 1=1
   		<if test="s_category != '' and s_category != null 

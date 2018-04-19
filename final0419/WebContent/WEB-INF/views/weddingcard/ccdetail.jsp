@@ -75,8 +75,8 @@ align: center;
 	<c:forEach items="${clist}" var="card" varStatus="cardS">
 
 	<tr class="_hover_tr">
-		<td>${card.pdseq}</td> 
-		<td style="text-align: left"><a href='cccdetail.do?pdseq=${card.pdseq}'>
+		<td>${card.cdseq}</td> 
+		<td style="text-align: left"><a href='cccdetail.do?cdseq=${card.cdseq}'>
 		${card.cid}</a></td>
 		<td>${card.title}</td> 
 	</tr>

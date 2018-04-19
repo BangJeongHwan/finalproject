@@ -41,9 +41,9 @@ public class CardServiceImpl implements CardService {
 	}
 
 	@Override
-	public CardDetailDto carddetail(int pdseq) throws Exception {
+	public CardDetailDto carddetail(int cdseq) throws Exception {
 		// TODO Auto-generated method stub
-		return cardDao.carddetail(pdseq);
+		return cardDao.carddetail(cdseq);
 	}
 
 	@Override
@@ -70,9 +70,9 @@ public class CardServiceImpl implements CardService {
 	}
 
 	@Override
-	public boolean ccdelete(int pdseq) throws Exception {
+	public boolean ccdelete(int cdseq) throws Exception {
 		// TODO Auto-generated method stub
-		return cardDao.ccdelete(pdseq);
+		return cardDao.ccdelete(cdseq);
 	}
 
 	@Override

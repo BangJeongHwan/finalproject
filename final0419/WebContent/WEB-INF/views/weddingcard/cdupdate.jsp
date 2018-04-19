@@ -6,7 +6,7 @@
 <fmt:requestEncoding value="UTF-8"/>
     
     
-<form name="frmForm" id="_frmForm" action="cdupdate.do?pdseq=${dto.pdseq}" method="post" 
+<form name="frmForm" id="_frmForm" action="cdupdate.do?cdseq=${dto.cdseq}" method="post" 
 enctype="multipart/form-data">
 <table>
 	<tr>
@@ -73,7 +73,7 @@ $("#card_update").click(function() {
 
 $("#ccdelete").click(function() {
 	alert('삭제하기');
-	$("#_frmForm").attr({ "target":"_self", "action":"ccdelete.do?pdseq=${dto.pdseq}"}).submit();
+	$("#_frmForm").attr({ "target":"_self", "action":"ccdelete.do?cdseq=${dto.cdseq}"}).submit();
 });
 
 </script>

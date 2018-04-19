@@ -13,12 +13,12 @@ public interface CardDao {
 	public List<CardDetailDto> cdlist(int wiseq) throws Exception;
 	public List<CardDetailDto> pagingcdlist(CDetailParam dto) throws Exception; 
 	public boolean cardwrite(CardDto dto) throws Exception;
-	public CardDetailDto carddetail(int pdseq) throws Exception;
+	public CardDetailDto carddetail(int cdseq) throws Exception;
 	public void clupdate(CardDto dto) throws Exception;
 	public boolean cdwrite(CardDetailDto dto) throws Exception;
 	public CardDto ccdetail(int wiseq) throws Exception;
 	public void ccupdate(CardDto dto) throws Exception;
-	public boolean ccdelete(int pdseq) throws Exception;
+	public boolean ccdelete(int cdseq) throws Exception;
 	public int clistcount(CardParam dto) throws Exception;
 	public int cdlistcount(CDetailParam dto) throws Exception;
 	public List<CardDetailDto> ordercdlist(CDetailParam dto) throws Exception;
