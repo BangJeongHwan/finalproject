@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- <div class="container"  style="margin:10px 1px 0px 60px; padding-left:10px; width: 1000px"> -->
-<!-- 
+
 <style type="text/css">	
 .selectTB table{
 	width: 100%;
@@ -15,15 +15,12 @@
 	align-content: center;
 }
 </style>
- -->
- 
 <style>
 #map1{
 	height: 400px;
 	width: 100%
 }
 </style>
- 
  <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
 <div class="container" style="padding-top: 10px">
 	<h2 class="nino-sectionHeading">
