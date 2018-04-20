@@ -9,14 +9,12 @@
 	width: 100%;
 	border:1px solid black;
 }
-<!--  
 .selectTB tr{
 }
 .selectTB th{	
 	align-content: center;
 }
 </style>
- -->
 <style>
 #map1{
 	height: 400px;
