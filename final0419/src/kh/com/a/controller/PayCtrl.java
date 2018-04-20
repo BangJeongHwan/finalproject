@@ -174,6 +174,9 @@ public class PayCtrl {
 		reserv.setRvseq(rvseq);
 		bsk.setRvseq(rvseq);
 		
+//		TODO 0419 혜영
+		reserv.setStatus("장바구니");
+		
 //		pdseq, redate, retime이 일치하는 상품이 장바구니에 이미 있는지 확인
 //		true : 상품이 존재함(추가로 담지 않음) / false : 상품이 존재하지 않음(장바구니에 추가)
 		if (reservServ.checkMuBskByMidReserv(reserv)) {
