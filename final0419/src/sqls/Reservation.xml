@@ -43,9 +43,10 @@
 		SELECT RV_SEQ.NEXTVAL FROM DUAL 
 	</select>
 	
+	<!-- 0418 : 장바구니 -> #{status} -->
 	<insert id="addMuReservation" parameterType="kh.com.a.model.ReservationDto">
 		INSERT INTO WD_RESERVATION (RVSEQ, MID, REDATE, RETIME, PDSEQ, STATUS)
-		VALUES(#{rvseq}, #{mid}, #{redate}, #{retime}, #{pdseq}, '장바구니')
+		VALUES(#{rvseq}, #{mid}, #{redate}, #{retime}, #{pdseq}, #{status})
 	</insert>
 	
 	<select id="getReservByRvseq" parameterType="java.lang.Integer" resultType="kh.com.a.model.ReservationDto">

@@ -5,13 +5,13 @@
 <fmt:requestEncoding value="utf-8"/>    
 <style>
 
-#product{
-	width: 80%;
-	height: 100%;
-	background-color: white;
-	margin : 0 auto;
-	align: center;
-}
+/* #product{ */
+/* 	width: 80%; */
+/* 	height: 100%; */
+/* 	background-color: white; */
+/* 	margin : 0 auto; */
+/* 	align: center; */
+/* } */
 
 
 .pro_detail{
