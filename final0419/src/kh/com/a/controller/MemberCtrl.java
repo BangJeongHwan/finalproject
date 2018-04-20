@@ -19,6 +19,7 @@ import kh.com.a.model.CompanyDto;
 import kh.com.a.model.MemberDto;
 import kh.com.a.model2.LoginDto;
 import kh.com.a.service.MemberServ;
+import kh.com.a.util.AES256Util;
 
 @Controller
 public class MemberCtrl {
@@ -39,12 +40,19 @@ public class MemberCtrl {
 		return "login.tiles";
 	}
 	
-//	로그인
+//	로그인 todohm
 	@ResponseBody
 	@RequestMapping(value="loginAf.do", 
 			method={RequestMethod.GET, RequestMethod.POST})
 	public String loginAf(HttpServletRequest req, LoginDto loginDto, Model model)throws Exception {
 		logger.info("KhMemberController loginAf " + new Date());
+		String str = "ijklmnopabcdefgh";
+		AES256Util aes = new AES256Util(str);
+		
+		
+		String pwd = loginDto.getPwd();
+		pwd = aes.encrypt(pwd); 
+		loginDto.setPwd(pwd);
 		LoginDto login = memberServ.login(loginDto);
 		if(login == null || login.getId().equals("")) {
 			req.getSession().invalidate();	
@@ -52,14 +60,14 @@ public class MemberCtrl {
 		}else {
 			req.getSession().setAttribute("login", login);			
 			return "true";				// 로그인 성공
-		}		
+		}	
 	}
 	
 //	로그아웃
 	@RequestMapping(value="logout.do", method={RequestMethod.GET,RequestMethod.POST})
 	public String logout(Model model, HttpServletRequest req) throws Exception{
 		req.getSession().invalidate();
-		return "index.tiles";
+		return "redirect:/index.do";
 	}
 		
 	@RequestMapping(value="SelectRegi.do", method={RequestMethod.GET,RequestMethod.POST})
@@ -104,8 +112,14 @@ public class MemberCtrl {
 	@RequestMapping(value="memberJoin.do", method={RequestMethod.GET,RequestMethod.POST})
 	public String memberJoin(Model model, MemberDto member) throws Exception {
 		logger.info("[MemberCtrl] memberJoin" + new Date());
-		System.out.println(member.toString());
 		
+		
+		String str = "ijklmnopabcdefgh";
+		AES256Util aes = new AES256Util(str);
+		System.out.println(member.toString());
+		String pwd = member.getPwd();
+		pwd = aes.encrypt(pwd);
+		member.setPwd(pwd);
 		if (memberServ.addMember(member)) {
 			System.out.println("성공");
 		} else {
