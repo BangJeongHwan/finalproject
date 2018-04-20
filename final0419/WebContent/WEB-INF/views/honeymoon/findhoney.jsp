@@ -37,7 +37,7 @@ if(mem==null){
 </style>
 
 
-		<form action=""  style="float: left;" id="styleForm">
+		<form action=""  style="float: left;margin-left: 5%;" id="styleForm">
 			<table border="1" class="tav">
 				<tr>
 					<th style="background-color: #C32E61;border: 1px solid #C32E61;">

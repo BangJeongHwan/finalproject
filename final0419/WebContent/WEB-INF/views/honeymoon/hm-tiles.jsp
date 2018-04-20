@@ -13,7 +13,6 @@
 	<meta name="copyright" content="ninodezign.com"> 
 	<title>웨딩</title>
 	
-	
 	<!-- favicon -->
     <link rel="shortcut icon" href="<%=request.getContextPath() %>/assets/images/ico/favicon.jpg">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<%=request.getContextPath() %>/assets/images/ico/apple-touch-icon-144-precomposed.png">
@@ -62,11 +61,11 @@
 
 <!-- main -->
 <!-- main 완료 -->
-<div style="padding-left: 200px; width: 80%; float: left; min-height: 1160px; align-content: center; background-color: white; margin-left: 300px;">   
+<div style="padding-left: 200px; width: 100%; float: left; min-height: 1160px; align-content: center; background-color: white; margin-left: 8%;">   
    <tiles:insertAttribute name="main"/>
 </div>
 </div>
-
+<!-- todohm -->
 
 
 <!-- javascript -->

@@ -201,6 +201,8 @@ function checkSubmit() {
 	return flag;
 }
 
+ 
+
 $(document).ready(function () {
 	// 아이디 중복 확인
 	$("#_mid").blur(function () {

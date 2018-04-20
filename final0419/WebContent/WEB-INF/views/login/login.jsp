@@ -104,7 +104,7 @@ function go() {
 		async:true,
 		success:function(data){
 			if(data=="true"){
-				opener.top.location.href="index.do";
+		           opener.document.location.reload();
 				self.close();
 			}else{
 				$("#_id").val("");

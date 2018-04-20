@@ -13,9 +13,10 @@
 }
 .honey_map .world {
     position: relative;
-    width: 1100px;
+    width: 100%;
     height: 616px;
     background: url(assets/images/honeymoon/worldmap.png) no-repeat;
+    margin-left: 10%;
 }
 .world img{
 	width: 56px;
@@ -40,11 +41,6 @@ width: 56px;
     position: absolute;
     left: 760px;
     top: 320px;
-}
-.world .caribian {
-    position: absolute;
-    left: 800px;
-    top: 300px;
 }
 .world .croa {
     position: absolute;
@@ -119,11 +115,6 @@ String imagePath = "assets/images/honeymoon/mapicon-";
 				<img src="assets/images/honeymoon/mapicon-baliz.png" id="baliz">
 				</a>
 		</div>
-		<div class="caribian" style="z-index: 0;">
-			<a href="#">
-				<img src="assets/images/honeymoon/mapicon-caribian.png" id="caribian">
-			</a>
-		</div>
 		<div class="croa" style="z-index: 0;">
 			<a href="#">
 				<img src="assets/images/honeymoon/mapicon-croa.png" id="croa">
@@ -181,7 +172,7 @@ var imgName;
 	$(".world a").click(function () {
 		var area = $(this).parent().attr("class").trim();
 		
-		 location.href="hmareaselect.do?area="+area;
+		 location.href="hmareaselect.do?selarea="+area;
 	});
 
 	

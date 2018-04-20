@@ -1,3 +1,4 @@
+<%@page import="kh.com.a.model2.LoginDto"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -44,9 +45,29 @@
 
 <h5 style="width: 100%;color: white; display: block; padding-top :16px; padding-bottom: 16px; white-space: normal; text-align: center; float: left; outline: 0;">허니문</h5>
 <button class="w4-bar-item w4-button tablink" onclick="location.href='findhoney.do'">나의 허니문 찾기</button>
+<button class="w4-bar-item w4-button tablink" onclick="location.href='hmStyle.do?style=none'">스타일비교</button>
 <button class="w4-bar-item w4-button tablink" onclick="location.href='compareHoney.do'">지역비교</button>
 <button class="w4-bar-item w4-button tablink" onclick="location.href='hm_bbslist.do'">여행지별 후기</button>
-<button class="w4-bar-item w4-button tablink" onclick="location.href='honeybbswrite.do'">내 후기 올리기</button>
+<button class="w4-bar-item w4-button tablink" id="_write">내 후기 올리기</button>
+<script type="text/javascript">
+<%
+LoginDto mem = (LoginDto)session.getAttribute("login");
+if(mem==null){
+	mem = new LoginDto("guest", "guest");
+	session.setAttribute("login", mem);
+}
+%>
+var auth = "<%=mem.getAuth()%>";
+$("#_write").click(function () {
+	if(auth == "guest"){
+		if(confirm("로그인 하시겠습니까?")){
+			location.href = "javascript:void(window.open('login.do', '로그인','top=200px, left=500px, width=450, height=450,scrollbars=no,resizable=no' ))";
+		}
+	}else {
+		location.href = "honeybbswrite.do";
+	}
+});
+</script>
 
     <!-- width: 100%;
     display: block;

@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="<%=request.getContextPath() %>/assets/css/tables.css" />
 <fmt:requestEncoding value="utf-8"/>
 <jsp:include page="honeymoon.jsp"/>
-<table class="tav">
+<table class="tav" style="margin-left: 5%;">
 				<tr >
 					<th width="1200px;" style="background-color: #C32E61;border: 1px solid #C32E61;">
 						<h4 align="center" style="padding: 10px 0px;color: white;"><b>내가 원하는 지역과 컨셉으로 상품 찾자!</b></h4>
@@ -34,11 +34,11 @@
     								<div style="width: 75%;margin-left: 50px;"><br><br>
     									<p id="_content"></p>
     								</div><br><br>
-    								<div style="width: 75%;margin-left: 50px;">
+    								<div style="width: 75%;margin-left: 50px;" id="_none1">
 	    								<b>대표적인 허니문</b> <font color="#C32E61" size="3px;">추천지역</font><br>
 											<font color="#C32E61" size="3px;" id="_area"></font>    								
     								</div><br><br>
-    								<div style="width: 75%;margin-left: 50px;">
+    								<div style="width: 75%;margin-left: 50px;" id="_none2">
 	    								<b>추천</b> <font color="#3232FF" size="3px;">point</font><br>
 	    								<p id="_recommend"></p>
     								</div>
@@ -56,6 +56,10 @@
 				});
 				function name() {
 					var selected = $("#_style option:selected").val();
+					if(selected != "none"){
+						$("#_none1").show();
+						$("#_none2").show();
+					}
 					
 					if(selected == "huyang"){
 						$("#_maindiv").css("background-image","url('./assets/images/honeymoon/huyang.jpg')");
@@ -88,7 +92,10 @@
 						$("#_area").html("유럽, 몰디브, 칸쿤, 타히티, 세이셀 등");
 						$("#_recommend").html("편안히 쉴 수 있는 휴양형 허니문을 선택하고 싶지만 무료함이 걱정되는 커플에게 추천");
 					}else{
-						
+						$("#_maindiv").css("background-image","url('./assets/images/honeymoon/area/moldiv2.jpg')");
+						$("#_title").html("지역을 선택해주세요.");
+						$("#_none1").hide();
+						$("#_none2").hide();
 					}
 				}
 			</script> 
